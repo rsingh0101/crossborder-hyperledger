@@ -1,0 +1,202 @@
+{
+	"groups": {},
+	"mod_policy": "Admins",
+	"policies": {
+		"Admins": {
+			"mod_policy": "Admins",
+			"policy": {
+				"type": 1,
+				"value": {
+					"identities": [
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "ADMIN"
+							},
+							"principal_classification": "ROLE"
+						}
+					],
+					"rule": {
+						"n_out_of": {
+							"n": 1,
+							"rules": [
+								{
+									"signed_by": 0
+								}
+							]
+						}
+					},
+					"version": 0
+				}
+			},
+			"version": "0"
+		},
+		"Endorsement": {
+			"mod_policy": "Admins",
+			"policy": {
+				"type": 1,
+				"value": {
+					"identities": [
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "PEER"
+							},
+							"principal_classification": "ROLE"
+						}
+					],
+					"rule": {
+						"n_out_of": {
+							"n": 1,
+							"rules": [
+								{
+									"signed_by": 0
+								}
+							]
+						}
+					},
+					"version": 0
+				}
+			},
+			"version": "0"
+		},
+		"Readers": {
+			"mod_policy": "Admins",
+			"policy": {
+				"type": 1,
+				"value": {
+					"identities": [
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "ADMIN"
+							},
+							"principal_classification": "ROLE"
+						},
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "PEER"
+							},
+							"principal_classification": "ROLE"
+						},
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "CLIENT"
+							},
+							"principal_classification": "ROLE"
+						}
+					],
+					"rule": {
+						"n_out_of": {
+							"n": 1,
+							"rules": [
+								{
+									"signed_by": 0
+								},
+								{
+									"signed_by": 1
+								},
+								{
+									"signed_by": 2
+								}
+							]
+						}
+					},
+					"version": 0
+				}
+			},
+			"version": "0"
+		},
+		"Writers": {
+			"mod_policy": "Admins",
+			"policy": {
+				"type": 1,
+				"value": {
+					"identities": [
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "ADMIN"
+							},
+							"principal_classification": "ROLE"
+						},
+						{
+							"principal": {
+								"msp_identifier": "senderbank-crossborder-com",
+								"role": "CLIENT"
+							},
+							"principal_classification": "ROLE"
+						}
+					],
+					"rule": {
+						"n_out_of": {
+							"n": 1,
+							"rules": [
+								{
+									"signed_by": 0
+								},
+								{
+									"signed_by": 1
+								}
+							]
+						}
+					},
+					"version": 0
+				}
+			},
+			"version": "0"
+		}
+	},
+	"values": {
+		"MSP": {
+			"mod_policy": "Admins",
+			"value": {
+				"config": {
+					"admins": [
+						"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNwakNDQWt1Z0F3SUJBZ0lVTXpkQm8wM05IbzhHK0l3MDhaWndCalFEdU5nd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNamRhRncwek16QXpNall4TWpVek1qZGFNSE14Q3pBSkJnTlZCQVlUQWxWVE1SY3dGUVlEVlFRSQpEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRUJ3d0hVbUZzWldsbmFERU9NQXdHQTFVRUN3d0ZZV1J0CmFXNHhLVEFuQmdOVkJBTU1JRUZrYldsdVFITmxibVJsY21KaGJtc3VZM0p2YzNOaWIzSmtaWEl1WTI5dE1Ga3cKRXdZSEtvWkl6ajBDQVFZSUtvWkl6ajBEQVFjRFFnQUVQS3VLNVZtakEyR1JzNk9RRXpFZGUzYXljL1BjUXh4SQplSnRvT1hTU3pyOXZkWkVCZ002TjdBcURtd3p3eE1PbUZWY1BDTktEYWUyT1VaMG9pTGVEZDZPQnFEQ0JwVEFPCkJnTlZIUThCQWY4RUJBTUNCNEF3REFZRFZSMFRBUUgvQkFJd0FEQmtCZ05WSFJFRVhUQmJod1FLQUFJUGdpQkIKWkcxcGJrQnpaVzVrWlhKaVlXNXJMbU55YjNOelltOXlaR1Z5TG1OdmJZSWdRV1J0YVc1QWMyVnVaR1Z5WW1GdQpheTFqY205emMySnZjbVJsY2kxamIyMkNDV3h2WTJGc2FHOXpkSWNFZndBQUFUQWZCZ05WSFNNRUdEQVdnQlJaClR5KzhhZFZsTEcyb0VjRyttdUtyaVFsRm16QUtCZ2dxaGtqT1BRUURBZ05KQURCR0FpRUFwaGErQXB6dzgrdkwKZkp4b0tpc2ViSW1BRzM4OHhEakNpbkZjQ3ZVZmVHSUNJUURWMjM3eDBUak96OFI2N2lacWxWdmxxdVNFaTRlbgo2ZnZvcDF0RTlXUi9sQT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+					],
+					"crypto_config": {
+						"identity_identifier_hash_function": "SHA256",
+						"signature_hash_family": "SHA2"
+					},
+					"fabric_node_ous": {
+						"admin_ou_identifier": {
+							"certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQXB5Z0F3SUJBZ0lVQUtja0V2dWhkblREVjRJNDBGVVE1MUZsdFpZd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNakphRncwek16QTJNalF4TWpVek1qSmFNSUdHTVFzd0NRWURWUVFHRXdKVlV6RVhNQlVHQTFVRQpDQXdPVG05eWRHZ2dRMkZ5YjJ4cGJtRXhFREFPQmdOVkJBY01CMUpoYkdWcFoyZ3hJekFoQmdOVkJBb01Hbk5sCmJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXVZMjl0TVNjd0pRWURWUVFEREI1allURXVjMlZ1WkdWeVltRnUKYXk1amNtOXpjMkp2Y21SbGNpNWpiMjB3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVREMWdQYwpoUHpIQjI4cWI5YzhsdGlhU0tmUEVxUks1U1hOQ0t3dklNS3FRNXRqaWVhaXJZWE5Ec2RFZmZJeWRpZkxhWlBlCmlrdXpOSG42MXZCVjVENnlvNEhsTUlIaU1CMEdBMVVkRGdRV0JCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEYKbXpBZkJnTlZIU01FR0RBV2dCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEZtekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVICkF3SXdZQVlEVlIwUkJGa3dWNGNFQ2dBQ0Q0SWVZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXUKWTI5dGdoNWpZVEV0YzJWdVpHVnlZbUZ1YXkxamNtOXpjMkp2Y21SbGNpMWpiMjJDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVRBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQTl4YmtUN2o4NEFhWlUxUlV5d1FjbkF2bUZoRGJYRkdkCmgvRmdkbno1OWFJQ0lFaVErRmhhV1FGUjJPSnRFYmdqOVNmZlY5ZzlHWFJjUnkxRXcyRnMwWmdKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+							"organizational_unit_identifier": "admin"
+						},
+						"client_ou_identifier": {
+							"certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQXB5Z0F3SUJBZ0lVQUtja0V2dWhkblREVjRJNDBGVVE1MUZsdFpZd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNakphRncwek16QTJNalF4TWpVek1qSmFNSUdHTVFzd0NRWURWUVFHRXdKVlV6RVhNQlVHQTFVRQpDQXdPVG05eWRHZ2dRMkZ5YjJ4cGJtRXhFREFPQmdOVkJBY01CMUpoYkdWcFoyZ3hJekFoQmdOVkJBb01Hbk5sCmJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXVZMjl0TVNjd0pRWURWUVFEREI1allURXVjMlZ1WkdWeVltRnUKYXk1amNtOXpjMkp2Y21SbGNpNWpiMjB3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVREMWdQYwpoUHpIQjI4cWI5YzhsdGlhU0tmUEVxUks1U1hOQ0t3dklNS3FRNXRqaWVhaXJZWE5Ec2RFZmZJeWRpZkxhWlBlCmlrdXpOSG42MXZCVjVENnlvNEhsTUlIaU1CMEdBMVVkRGdRV0JCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEYKbXpBZkJnTlZIU01FR0RBV2dCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEZtekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVICkF3SXdZQVlEVlIwUkJGa3dWNGNFQ2dBQ0Q0SWVZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXUKWTI5dGdoNWpZVEV0YzJWdVpHVnlZbUZ1YXkxamNtOXpjMkp2Y21SbGNpMWpiMjJDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVRBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQTl4YmtUN2o4NEFhWlUxUlV5d1FjbkF2bUZoRGJYRkdkCmgvRmdkbno1OWFJQ0lFaVErRmhhV1FGUjJPSnRFYmdqOVNmZlY5ZzlHWFJjUnkxRXcyRnMwWmdKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+							"organizational_unit_identifier": "client"
+						},
+						"enable": true,
+						"orderer_ou_identifier": {
+							"certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQXB5Z0F3SUJBZ0lVQUtja0V2dWhkblREVjRJNDBGVVE1MUZsdFpZd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNakphRncwek16QTJNalF4TWpVek1qSmFNSUdHTVFzd0NRWURWUVFHRXdKVlV6RVhNQlVHQTFVRQpDQXdPVG05eWRHZ2dRMkZ5YjJ4cGJtRXhFREFPQmdOVkJBY01CMUpoYkdWcFoyZ3hJekFoQmdOVkJBb01Hbk5sCmJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXVZMjl0TVNjd0pRWURWUVFEREI1allURXVjMlZ1WkdWeVltRnUKYXk1amNtOXpjMkp2Y21SbGNpNWpiMjB3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVREMWdQYwpoUHpIQjI4cWI5YzhsdGlhU0tmUEVxUks1U1hOQ0t3dklNS3FRNXRqaWVhaXJZWE5Ec2RFZmZJeWRpZkxhWlBlCmlrdXpOSG42MXZCVjVENnlvNEhsTUlIaU1CMEdBMVVkRGdRV0JCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEYKbXpBZkJnTlZIU01FR0RBV2dCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEZtekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVICkF3SXdZQVlEVlIwUkJGa3dWNGNFQ2dBQ0Q0SWVZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXUKWTI5dGdoNWpZVEV0YzJWdVpHVnlZbUZ1YXkxamNtOXpjMkp2Y21SbGNpMWpiMjJDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVRBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQTl4YmtUN2o4NEFhWlUxUlV5d1FjbkF2bUZoRGJYRkdkCmgvRmdkbno1OWFJQ0lFaVErRmhhV1FGUjJPSnRFYmdqOVNmZlY5ZzlHWFJjUnkxRXcyRnMwWmdKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+							"organizational_unit_identifier": "orderer"
+						},
+						"peer_ou_identifier": {
+							"certificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQXB5Z0F3SUJBZ0lVQUtja0V2dWhkblREVjRJNDBGVVE1MUZsdFpZd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNakphRncwek16QTJNalF4TWpVek1qSmFNSUdHTVFzd0NRWURWUVFHRXdKVlV6RVhNQlVHQTFVRQpDQXdPVG05eWRHZ2dRMkZ5YjJ4cGJtRXhFREFPQmdOVkJBY01CMUpoYkdWcFoyZ3hJekFoQmdOVkJBb01Hbk5sCmJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXVZMjl0TVNjd0pRWURWUVFEREI1allURXVjMlZ1WkdWeVltRnUKYXk1amNtOXpjMkp2Y21SbGNpNWpiMjB3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVREMWdQYwpoUHpIQjI4cWI5YzhsdGlhU0tmUEVxUks1U1hOQ0t3dklNS3FRNXRqaWVhaXJZWE5Ec2RFZmZJeWRpZkxhWlBlCmlrdXpOSG42MXZCVjVENnlvNEhsTUlIaU1CMEdBMVVkRGdRV0JCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEYKbXpBZkJnTlZIU01FR0RBV2dCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEZtekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVICkF3SXdZQVlEVlIwUkJGa3dWNGNFQ2dBQ0Q0SWVZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXUKWTI5dGdoNWpZVEV0YzJWdVpHVnlZbUZ1YXkxamNtOXpjMkp2Y21SbGNpMWpiMjJDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVRBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQTl4YmtUN2o4NEFhWlUxUlV5d1FjbkF2bUZoRGJYRkdkCmgvRmdkbno1OWFJQ0lFaVErRmhhV1FGUjJPSnRFYmdqOVNmZlY5ZzlHWFJjUnkxRXcyRnMwWmdKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+							"organizational_unit_identifier": "peer"
+						}
+					},
+					"intermediate_certs": [],
+					"name": "senderbank-crossborder-com",
+					"organizational_unit_identifiers": [],
+					"revocation_list": [],
+					"root_certs": [
+						"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM5akNDQXB5Z0F3SUJBZ0lVQUtja0V2dWhkblREVjRJNDBGVVE1MUZsdFpZd0NnWUlLb1pJemowRUF3SXcKZ1lZeEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4Ckp6QWxCZ05WQkFNTUhtTmhNUzV6Wlc1a1pYSmlZVzVyTG1OeWIzTnpZbTl5WkdWeUxtTnZiVEFlRncweU16QTIKTWpjeE1qVXpNakphRncwek16QTJNalF4TWpVek1qSmFNSUdHTVFzd0NRWURWUVFHRXdKVlV6RVhNQlVHQTFVRQpDQXdPVG05eWRHZ2dRMkZ5YjJ4cGJtRXhFREFPQmdOVkJBY01CMUpoYkdWcFoyZ3hJekFoQmdOVkJBb01Hbk5sCmJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXVZMjl0TVNjd0pRWURWUVFEREI1allURXVjMlZ1WkdWeVltRnUKYXk1amNtOXpjMkp2Y21SbGNpNWpiMjB3V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVREMWdQYwpoUHpIQjI4cWI5YzhsdGlhU0tmUEVxUks1U1hOQ0t3dklNS3FRNXRqaWVhaXJZWE5Ec2RFZmZJeWRpZkxhWlBlCmlrdXpOSG42MXZCVjVENnlvNEhsTUlIaU1CMEdBMVVkRGdRV0JCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEYKbXpBZkJnTlZIU01FR0RBV2dCUlpUeSs4YWRWbExHMm9FY0crbXVLcmlRbEZtekFQQmdOVkhSTUJBZjhFQlRBRApBUUgvTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVQmdnckJnRUZCUWNEQVFZSUt3WUJCUVVICkF3SXdZQVlEVlIwUkJGa3dWNGNFQ2dBQ0Q0SWVZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnZjM05pYjNKa1pYSXUKWTI5dGdoNWpZVEV0YzJWdVpHVnlZbUZ1YXkxamNtOXpjMkp2Y21SbGNpMWpiMjJDQ1d4dlkyRnNhRzl6ZEljRQpmd0FBQVRBS0JnZ3Foa2pPUFFRREFnTklBREJGQWlFQTl4YmtUN2o4NEFhWlUxUlV5d1FjbkF2bUZoRGJYRkdkCmgvRmdkbno1OWFJQ0lFaVErRmhhV1FGUjJPSnRFYmdqOVNmZlY5ZzlHWFJjUnkxRXcyRnMwWmdKCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"
+					],
+					"signing_identity": null,
+					"tls_intermediate_certs": [],
+					"tls_root_certs": [
+						"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURBakNDQXFpZ0F3SUJBZ0lVZWtZSXExM08yQXpFVjhEMGZiV3VicERLOGxvd0NnWUlLb1pJemowRUF3SXcKZ1lreEN6QUpCZ05WQkFZVEFsVlRNUmN3RlFZRFZRUUlEQTVPYjNKMGFDQkRZWEp2YkdsdVlURVFNQTRHQTFVRQpCd3dIVW1Gc1pXbG5hREVqTUNFR0ExVUVDZ3dhYzJWdVpHVnlZbUZ1YXk1amNtOXpjMkp2Y21SbGNpNWpiMjB4CktqQW9CZ05WQkFNTUlYUnNjMk5oTVM1elpXNWtaWEppWVc1ckxtTnliM056WW05eVpHVnlMbU52YlRBZUZ3MHkKTXpBMk1qY3hNalV6TWpKYUZ3MHpNekEyTWpReE1qVXpNakphTUlHSk1Rc3dDUVlEVlFRR0V3SlZVekVYTUJVRwpBMVVFQ0F3T1RtOXlkR2dnUTJGeWIyeHBibUV4RURBT0JnTlZCQWNNQjFKaGJHVnBaMmd4SXpBaEJnTlZCQW9NCkduTmxibVJsY21KaGJtc3VZM0p2YzNOaWIzSmtaWEl1WTI5dE1Tb3dLQVlEVlFRRERDRjBiSE5qWVRFdWMyVnUKWkdWeVltRnVheTVqY205emMySnZjbVJsY2k1amIyMHdXVEFUQmdjcWhrak9QUUlCQmdncWhrak9QUU1CQndOQwpBQVMwN0ZJVzRCM01sbFpudzQ0VGFRZ2lFamZEMGpJK2JPbEJjeXZYMUFxYWtIVXpvZDRRL0J3WFFmWGk4d2RRCkRYOW1XVENpNVFMU2FwMExWZTdaYjc4R280SHJNSUhvTUIwR0ExVWREZ1FXQkJRM2h2ZzZ1VFBudnNMZjRoZ0YKNUg1NFpLbW9SREFmQmdOVkhTTUVHREFXZ0JRM2h2ZzZ1VFBudnNMZjRoZ0Y1SDU0Wkttb1JEQVBCZ05WSFJNQgpBZjhFQlRBREFRSC9NQTRHQTFVZER3RUIvd1FFQXdJQnBqQWRCZ05WSFNVRUZqQVVCZ2dyQmdFRkJRY0RBUVlJCkt3WUJCUVVIQXdJd1pnWURWUjBSQkY4d1hZY0VDZ0FDRDRJaGRHeHpZMkV4TG5ObGJtUmxjbUpoYm1zdVkzSnYKYzNOaWIzSmtaWEl1WTI5dGdpRjBiSE5qWVRFdGMyVnVaR1Z5WW1GdWF5MWpjbTl6YzJKdmNtUmxjaTFqYjIyQwpDV3h2WTJGc2FHOXpkSWNFZndBQUFUQUtCZ2dxaGtqT1BRUURBZ05JQURCRkFpRUFqTFlKNmhwVlNwS2oxeC9ZCkhBVHJIb3czQUhqZDByZlF4YUlyMGxnVTBvUUNJQm9vRE81VXNQK2ljV2lWY3ZBemgyTlIvdzRaWk4rRjJDYzIKY3NhZnJ6R2oKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+					]
+				},
+				"type": 0
+			},
+			"version": "0"
+		}
+	},
+	"version": "0"
+}

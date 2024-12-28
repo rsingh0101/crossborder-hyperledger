@@ -1,0 +1,207 @@
+---
+Organizations:
+  - &centralforexbank-crossborder-com
+      Name: centralforexbank-crossborder-com
+      ID: centralforexbank-crossborder-com
+      MSPDir: keyfiles/peerOrganizations/centralforexbank.crossborder.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('centralforexbank-crossborder-com.admin', 'centralforexbank-crossborder-com.peer', 'centralforexbank-crossborder-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('centralforexbank-crossborder-com.admin', 'centralforexbank-crossborder-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('centralforexbank-crossborder-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('centralforexbank-crossborder-com.peer')"
+
+      AnchorPeers:
+      - Host: 10.0.2.15
+        Port: 7006
+  - &crossborder-com
+      Name: crossborder-com
+      ID: crossborder-com
+      MSPDir: keyfiles/ordererOrganizations/crossborder.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('crossborder-com.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('crossborder-com.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('crossborder-com.admin')"
+  - &receiverbank-crossborder-com
+      Name: receiverbank-crossborder-com
+      ID: receiverbank-crossborder-com
+      MSPDir: keyfiles/peerOrganizations/receiverbank.crossborder.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('receiverbank-crossborder-com.admin', 'receiverbank-crossborder-com.peer', 'receiverbank-crossborder-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('receiverbank-crossborder-com.admin', 'receiverbank-crossborder-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('receiverbank-crossborder-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('receiverbank-crossborder-com.peer')"
+
+      AnchorPeers:
+      - Host: 10.0.2.15
+        Port: 7007
+  - &senderbank-crossborder-com
+      Name: senderbank-crossborder-com
+      ID: senderbank-crossborder-com
+      MSPDir: keyfiles/peerOrganizations/senderbank.crossborder.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('senderbank-crossborder-com.admin', 'senderbank-crossborder-com.peer', 'senderbank-crossborder-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('senderbank-crossborder-com.admin', 'senderbank-crossborder-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('senderbank-crossborder-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('senderbank-crossborder-com.peer')"
+
+      AnchorPeers:
+      - Host: 10.0.2.15
+        Port: 7003
+      - Host: 10.0.2.15
+        Port: 7004
+      - Host: 10.0.2.15
+        Port: 7005
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+
+  Orderer: &OrdererCapabilities
+    V2_0: true
+
+  Application: &ApplicationCapabilities
+    V2_0: true
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  OrdererType: etcdraft
+
+  BatchTimeout: 2s
+
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+
+  Addresses:
+  - 10.0.2.15:7013
+  - 10.0.2.15:7014
+  - 10.0.2.15:7015
+  EtcdRaft:
+    Consenters:
+    - Host: 10.0.2.15
+      Port: 7013
+      ClientTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer1.crossborder.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer1.crossborder.com/tls/server.crt
+    - Host: 10.0.2.15
+      Port: 7014
+      ClientTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer2.crossborder.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer2.crossborder.com/tls/server.crt
+    - Host: 10.0.2.15
+      Port: 7015
+      ClientTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer3.crossborder.com/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/crossborder.com/orderers/orderer3.crossborder.com/tls/server.crt
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  OrgChannel:
+    Consortium: SampleConsortium
+    <<: *ChannelDefaults
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *centralforexbank-crossborder-com
+      - *receiverbank-crossborder-com
+      - *senderbank-crossborder-com
+      Capabilities:
+        <<: *ApplicationCapabilities
+
+  OrdererGenesis:
+    <<: *ChannelDefaults
+    Capabilities:
+      <<: *ChannelCapabilities
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *crossborder-com
+      Capabilities:
+        <<: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - <<: *crossborder-com
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - *centralforexbank-crossborder-com
+        - *receiverbank-crossborder-com
+        - *senderbank-crossborder-com

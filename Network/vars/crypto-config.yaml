@@ -1,0 +1,66 @@
+---
+OrdererOrgs:
+  - Name: crossborder.com
+    Domain: crossborder.com
+    Specs:
+      - Hostname: orderer1
+        SANS:
+          - 10.0.2.15
+      - Hostname: orderer2
+        SANS:
+          - 10.0.2.15
+      - Hostname: orderer3
+        SANS:
+          - 10.0.2.15
+
+PeerOrgs:
+  - Name: centralforexbank.crossborder.com
+    Domain: centralforexbank.crossborder.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.centralforexbank.crossborder.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.centralforexbank.crossborder.com
+        SANS:
+          - 10.0.2.15
+  - Name: receiverbank.crossborder.com
+    Domain: receiverbank.crossborder.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.receiverbank.crossborder.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.receiverbank.crossborder.com
+        SANS:
+          - 10.0.2.15
+  - Name: senderbank.crossborder.com
+    Domain: senderbank.crossborder.com
+    EnableNodeOUs: true
+    CA:
+      Hostname: ca1
+      CommonName: ca1.senderbank.crossborder.com
+      Country: US
+      Province: North Carolina
+      Locality: Raleigh
+    Specs:
+      - Hostname: peer1
+        CommonName: peer1.senderbank.crossborder.com
+        SANS:
+          - 10.0.2.15
+      - Hostname: peer2
+        CommonName: peer2.senderbank.crossborder.com
+        SANS:
+          - 10.0.2.15
+      - Hostname: peer3
+        CommonName: peer3.senderbank.crossborder.com
+        SANS:
+          - 10.0.2.15

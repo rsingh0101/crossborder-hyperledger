@@ -1,0 +1,37 @@
+{
+  "centralforexbank-crossborder-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "10.0.2.15", "port": "7006" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "receiverbank-crossborder-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "10.0.2.15", "port": "7007" }
+        ]
+      },
+      "version": "0"
+    }
+  },
+  "senderbank-crossborder-com": {
+    "AnchorPeers": {
+      "mod_policy": "Admins",
+      "value": {
+        "anchor_peers": [
+           { "host": "10.0.2.15", "port": "7003" },
+           { "host": "10.0.2.15", "port": "7004" },
+           { "host": "10.0.2.15", "port": "7005" }
+        ]
+      },
+      "version": "0"
+    }
+  }
+}

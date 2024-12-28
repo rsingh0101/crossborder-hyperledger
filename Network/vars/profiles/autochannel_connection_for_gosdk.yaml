@@ -1,0 +1,439 @@
+---
+# ROOTPATH should be set to the absolute path of crypto material starting directory
+# for example: export ROOTPATH=/home/ubuntu/mywork/vars/keyfiles
+"name": "dbd55b8afb_net"
+"x-type": "hlfv-2.2.2"
+"version": "1.0.0"
+"client":
+  "organization": "senderbank.crossborder.com"
+  "cryptoconfig":
+    "path": "${ROOTPATH}"
+  "connection":
+    "timeout":
+      "peer":
+        "endorser": "300"
+        "eventHub": "300"
+        "eventReg": "300"
+      "orderer": "300"
+  "credentialStore":
+    "path": "/tmp/state-store"
+    "cryptoStore":
+      "path": "/tmp/msp"
+  "BCCSP":
+    "security":
+      "enabled": "true"
+      "default":
+        "provider": "SW"
+      "hashAlgorithm": "SHA2"
+      "softVerify": "true"
+      "level": "256"
+
+"channels":
+  "autochannel":
+    "orderers":
+    - "orderer1.crossborder.com"
+    - "orderer2.crossborder.com"
+    - "orderer3.crossborder.com"
+    "peers":
+      "peer1.senderbank.crossborder.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer2.senderbank.crossborder.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer3.senderbank.crossborder.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer1.centralforexbank.crossborder.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+      "peer1.receiverbank.crossborder.com":
+        "endorsingPeer": true
+        "chaincodeQuery": true
+        "eventSource": true
+
+"organizations":
+  "centralforexbank.crossborder.com":
+    "mspid": "centralforexbank-crossborder-com"
+    "cryptoPath": "peerOrganizations/centralforexbank.crossborder.com/users/{username}@centralforexbank.crossborder.com/msp"
+    "peers":
+    - "peer1.centralforexbank.crossborder.com"
+    "certificateAuthorities":
+    - "ca1.centralforexbank.crossborder.com"
+  "crossborder.com":
+    "mspid": "crossborder-com"
+    "cryptoPath": "ordererOrganizations/crossborder.com/users/{username}@crossborder.com/msp"
+    "orderers":
+    - "orderer1.crossborder.com"
+    - "orderer2.crossborder.com"
+    - "orderer3.crossborder.com"
+    "certificateAuthorities":
+  "receiverbank.crossborder.com":
+    "mspid": "receiverbank-crossborder-com"
+    "cryptoPath": "peerOrganizations/receiverbank.crossborder.com/users/{username}@receiverbank.crossborder.com/msp"
+    "peers":
+    - "peer1.receiverbank.crossborder.com"
+    "certificateAuthorities":
+    - "ca1.receiverbank.crossborder.com"
+  "senderbank.crossborder.com":
+    "mspid": "senderbank-crossborder-com"
+    "cryptoPath": "peerOrganizations/senderbank.crossborder.com/users/{username}@senderbank.crossborder.com/msp"
+    "peers":
+    - "peer1.senderbank.crossborder.com"
+    - "peer2.senderbank.crossborder.com"
+    - "peer3.senderbank.crossborder.com"
+    "certificateAuthorities":
+    - "ca1.senderbank.crossborder.com"
+
+"orderers":
+  "orderer1.crossborder.com":
+    "url": "grpcs://10.0.2.15:7013"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer1.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIICujCCAmCgAwIBAgIUFNp2rjlbHZbIvxlSriZJqpznUskwCgYIKoZIzj0EAwIw
+        cjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRgwFgYDVQQKDA9jcm9zc2JvcmRlci5jb20xHjAcBgNVBAMMFXRs
+        c2NhLmNyb3NzYm9yZGVyLmNvbTAeFw0yMzA2MjcxMjUyMzlaFw0zMzA2MjQxMjUy
+        MzlaMHIxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4G
+        A1UEBwwHUmFsZWlnaDEYMBYGA1UECgwPY3Jvc3Nib3JkZXIuY29tMR4wHAYDVQQD
+        DBV0bHNjYS5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AARyY5F9I/P8EpEpMkGrl3Z112vUQ4e5qnKiome4ozYYjtT0i84tHFgkLBcjFqL/
+        XzASvM7jjie7bRTIvHCMoIBjo4HTMIHQMB0GA1UdDgQWBBQjYBvIvUreiio2SH8Z
+        YX9p+XNuxzAfBgNVHSMEGDAWgBQjYBvIvUreiio2SH8ZYX9p+XNuxzAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwTgYDVR0RBEcwRYcECgACD4IVdGxzY2EuY3Jvc3Nib3JkZXIuY29t
+        ghV0bHNjYS1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjO
+        PQQDAgNIADBFAiAqAJ2pQr2OpMCHWsGHqAhGTUhLVeIwYcJZwvM1/25zwQIhAJWO
+        xShAyRbcKndotXZxiKYZAH13pC5QeTHTSlM/8iKr
+        -----END CERTIFICATE-----
+
+  "orderer2.crossborder.com":
+    "url": "grpcs://10.0.2.15:7014"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer2.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIICujCCAmCgAwIBAgIUFNp2rjlbHZbIvxlSriZJqpznUskwCgYIKoZIzj0EAwIw
+        cjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRgwFgYDVQQKDA9jcm9zc2JvcmRlci5jb20xHjAcBgNVBAMMFXRs
+        c2NhLmNyb3NzYm9yZGVyLmNvbTAeFw0yMzA2MjcxMjUyMzlaFw0zMzA2MjQxMjUy
+        MzlaMHIxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4G
+        A1UEBwwHUmFsZWlnaDEYMBYGA1UECgwPY3Jvc3Nib3JkZXIuY29tMR4wHAYDVQQD
+        DBV0bHNjYS5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AARyY5F9I/P8EpEpMkGrl3Z112vUQ4e5qnKiome4ozYYjtT0i84tHFgkLBcjFqL/
+        XzASvM7jjie7bRTIvHCMoIBjo4HTMIHQMB0GA1UdDgQWBBQjYBvIvUreiio2SH8Z
+        YX9p+XNuxzAfBgNVHSMEGDAWgBQjYBvIvUreiio2SH8ZYX9p+XNuxzAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwTgYDVR0RBEcwRYcECgACD4IVdGxzY2EuY3Jvc3Nib3JkZXIuY29t
+        ghV0bHNjYS1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjO
+        PQQDAgNIADBFAiAqAJ2pQr2OpMCHWsGHqAhGTUhLVeIwYcJZwvM1/25zwQIhAJWO
+        xShAyRbcKndotXZxiKYZAH13pC5QeTHTSlM/8iKr
+        -----END CERTIFICATE-----
+
+  "orderer3.crossborder.com":
+    "url": "grpcs://10.0.2.15:7015"
+    "grpcOptions":
+      "ssl-target-name-override": "orderer3.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIICujCCAmCgAwIBAgIUFNp2rjlbHZbIvxlSriZJqpznUskwCgYIKoZIzj0EAwIw
+        cjELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRgwFgYDVQQKDA9jcm9zc2JvcmRlci5jb20xHjAcBgNVBAMMFXRs
+        c2NhLmNyb3NzYm9yZGVyLmNvbTAeFw0yMzA2MjcxMjUyMzlaFw0zMzA2MjQxMjUy
+        MzlaMHIxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4G
+        A1UEBwwHUmFsZWlnaDEYMBYGA1UECgwPY3Jvc3Nib3JkZXIuY29tMR4wHAYDVQQD
+        DBV0bHNjYS5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AARyY5F9I/P8EpEpMkGrl3Z112vUQ4e5qnKiome4ozYYjtT0i84tHFgkLBcjFqL/
+        XzASvM7jjie7bRTIvHCMoIBjo4HTMIHQMB0GA1UdDgQWBBQjYBvIvUreiio2SH8Z
+        YX9p+XNuxzAfBgNVHSMEGDAWgBQjYBvIvUreiio2SH8ZYX9p+XNuxzAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwTgYDVR0RBEcwRYcECgACD4IVdGxzY2EuY3Jvc3Nib3JkZXIuY29t
+        ghV0bHNjYS1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjO
+        PQQDAgNIADBFAiAqAJ2pQr2OpMCHWsGHqAhGTUhLVeIwYcJZwvM1/25zwQIhAJWO
+        xShAyRbcKndotXZxiKYZAH13pC5QeTHTSlM/8iKr
+        -----END CERTIFICATE-----
+
+"peers":
+  "peer1.senderbank.crossborder.com":
+    "url": "grpcs://10.0.2.15:7003"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.senderbank.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAjCCAqigAwIBAgIUekYIq13O2AzEV8D0fbWubpDK8lowCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwac2VuZGVyYmFuay5jcm9zc2JvcmRlci5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5zZW5kZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTAeFw0y
+        MzA2MjcxMjUzMjJaFw0zMzA2MjQxMjUzMjJaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        GnNlbmRlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMSowKAYDVQQDDCF0bHNjYTEuc2Vu
+        ZGVyYmFuay5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AAS07FIW4B3MllZnw44TaQgiEjfD0jI+bOlBcyvX1AqakHUzod4Q/BwXQfXi8wdQ
+        DX9mWTCi5QLSap0LVe7Zb78Go4HrMIHoMB0GA1UdDgQWBBQ3hvg6uTPnvsLf4hgF
+        5H54ZKmoRDAfBgNVHSMEGDAWgBQ3hvg6uTPnvsLf4hgF5H54ZKmoRDAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcECgACD4IhdGxzY2ExLnNlbmRlcmJhbmsuY3Jv
+        c3Nib3JkZXIuY29tgiF0bHNjYTEtc2VuZGVyYmFuay1jcm9zc2JvcmRlci1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiEAjLYJ6hpVSpKj1x/Y
+        HATrHow3AHjd0rfQxaIr0lgU0oQCIBooDO5UsP+icWiVcvAzh2NR/w4ZZN+F2Cc2
+        csafrzGj
+        -----END CERTIFICATE-----
+
+  "peer2.senderbank.crossborder.com":
+    "url": "grpcs://10.0.2.15:7004"
+    "grpcOptions":
+      "ssl-target-name-override": "peer2.senderbank.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAjCCAqigAwIBAgIUekYIq13O2AzEV8D0fbWubpDK8lowCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwac2VuZGVyYmFuay5jcm9zc2JvcmRlci5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5zZW5kZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTAeFw0y
+        MzA2MjcxMjUzMjJaFw0zMzA2MjQxMjUzMjJaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        GnNlbmRlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMSowKAYDVQQDDCF0bHNjYTEuc2Vu
+        ZGVyYmFuay5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AAS07FIW4B3MllZnw44TaQgiEjfD0jI+bOlBcyvX1AqakHUzod4Q/BwXQfXi8wdQ
+        DX9mWTCi5QLSap0LVe7Zb78Go4HrMIHoMB0GA1UdDgQWBBQ3hvg6uTPnvsLf4hgF
+        5H54ZKmoRDAfBgNVHSMEGDAWgBQ3hvg6uTPnvsLf4hgF5H54ZKmoRDAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcECgACD4IhdGxzY2ExLnNlbmRlcmJhbmsuY3Jv
+        c3Nib3JkZXIuY29tgiF0bHNjYTEtc2VuZGVyYmFuay1jcm9zc2JvcmRlci1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiEAjLYJ6hpVSpKj1x/Y
+        HATrHow3AHjd0rfQxaIr0lgU0oQCIBooDO5UsP+icWiVcvAzh2NR/w4ZZN+F2Cc2
+        csafrzGj
+        -----END CERTIFICATE-----
+
+  "peer3.senderbank.crossborder.com":
+    "url": "grpcs://10.0.2.15:7005"
+    "grpcOptions":
+      "ssl-target-name-override": "peer3.senderbank.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDAjCCAqigAwIBAgIUekYIq13O2AzEV8D0fbWubpDK8lowCgYIKoZIzj0EAwIw
+        gYkxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwac2VuZGVyYmFuay5jcm9zc2JvcmRlci5jb20x
+        KjAoBgNVBAMMIXRsc2NhMS5zZW5kZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTAeFw0y
+        MzA2MjcxMjUzMjJaFw0zMzA2MjQxMjUzMjJaMIGJMQswCQYDVQQGEwJVUzEXMBUG
+        A1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoM
+        GnNlbmRlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMSowKAYDVQQDDCF0bHNjYTEuc2Vu
+        ZGVyYmFuay5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
+        AAS07FIW4B3MllZnw44TaQgiEjfD0jI+bOlBcyvX1AqakHUzod4Q/BwXQfXi8wdQ
+        DX9mWTCi5QLSap0LVe7Zb78Go4HrMIHoMB0GA1UdDgQWBBQ3hvg6uTPnvsLf4hgF
+        5H54ZKmoRDAfBgNVHSMEGDAWgBQ3hvg6uTPnvsLf4hgF5H54ZKmoRDAPBgNVHRMB
+        Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYI
+        KwYBBQUHAwIwZgYDVR0RBF8wXYcECgACD4IhdGxzY2ExLnNlbmRlcmJhbmsuY3Jv
+        c3Nib3JkZXIuY29tgiF0bHNjYTEtc2VuZGVyYmFuay1jcm9zc2JvcmRlci1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNIADBFAiEAjLYJ6hpVSpKj1x/Y
+        HATrHow3AHjd0rfQxaIr0lgU0oQCIBooDO5UsP+icWiVcvAzh2NR/w4ZZN+F2Cc2
+        csafrzGj
+        -----END CERTIFICATE-----
+
+  "peer1.centralforexbank.crossborder.com":
+    "url": "grpcs://10.0.2.15:7006"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.centralforexbank.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDJjCCAsygAwIBAgIUEe8oF+z+Gtv3413mzqZTotGQglEwCgYIKoZIzj0EAwIw
+        gZUxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEpMCcGA1UECgwgY2VudHJhbGZvcmV4YmFuay5jcm9zc2JvcmRl
+        ci5jb20xMDAuBgNVBAMMJ3Rsc2NhMS5jZW50cmFsZm9yZXhiYW5rLmNyb3NzYm9y
+        ZGVyLmNvbTAeFw0yMzA2MjcxMjUyMjZaFw0zMzA2MjQxMjUyMjZaMIGVMQswCQYD
+        VQQGEwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVp
+        Z2gxKTAnBgNVBAoMIGNlbnRyYWxmb3JleGJhbmsuY3Jvc3Nib3JkZXIuY29tMTAw
+        LgYDVQQDDCd0bHNjYTEuY2VudHJhbGZvcmV4YmFuay5jcm9zc2JvcmRlci5jb20w
+        WTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATecr17judp6TAUAKH/AUxLNC9gYta+
+        0ppsBr1nwIgX6gQwn8FfxsVZTMQHBkuecJimnSmE0GjxelXVav6gkqsEo4H3MIH0
+        MB0GA1UdDgQWBBToiQLEVwhmsEYTEjmLWAtrzQ/55DAfBgNVHSMEGDAWgBToiQLE
+        VwhmsEYTEjmLWAtrzQ/55DAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
+        pjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwcgYDVR0RBGswaYcECgAC
+        D4IndGxzY2ExLmNlbnRyYWxmb3JleGJhbmsuY3Jvc3Nib3JkZXIuY29tgid0bHNj
+        YTEtY2VudHJhbGZvcmV4YmFuay1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNIADBFAiAwEp4Qh5mN80EJLlR10dmSqUq43JtX4jCt
+        GZj6h4t8wwIhAKgF+8Xb43DsJqJsgyU+AD5Ld+InP+qdzqWn3jaKNy6y
+        -----END CERTIFICATE-----
+
+  "peer1.receiverbank.crossborder.com":
+    "url": "grpcs://10.0.2.15:7007"
+    "grpcOptions":
+      "ssl-target-name-override": "peer1.receiverbank.crossborder.com"
+    "tlsCACerts":
+      "pem": |
+        -----BEGIN CERTIFICATE-----
+        MIIDDTCCArSgAwIBAgIUNyTZCM0ztnxwlmQA7xMbZlqMnR8wCgYIKoZIzj0EAwIw
+        gY0xCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDElMCMGA1UECgwccmVjZWl2ZXJiYW5rLmNyb3NzYm9yZGVyLmNv
+        bTEsMCoGA1UEAwwjdGxzY2ExLnJlY2VpdmVyYmFuay5jcm9zc2JvcmRlci5jb20w
+        HhcNMjMwNjI3MTI1MzA0WhcNMzMwNjI0MTI1MzA0WjCBjTELMAkGA1UEBhMCVVMx
+        FzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQHDAdSYWxlaWdoMSUwIwYD
+        VQQKDBxyZWNlaXZlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMSwwKgYDVQQDDCN0bHNj
+        YTEucmVjZWl2ZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTBZMBMGByqGSM49AgEGCCqG
+        SM49AwEHA0IABN/k4YoRoQu1Ihl/T8cwPVYXezx2n2sIG/C/KmC9N3Rb1kFPXYP/
+        xfOGTjrKgZVgCgghQ+DRW/VIKNoz/S+k2eKjge8wgewwHQYDVR0OBBYEFL0HJLEz
+        oAD8KN1ytIT+2hoLFiPZMB8GA1UdIwQYMBaAFL0HJLEzoAD8KN1ytIT+2hoLFiPZ
+        MA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsG
+        AQUFBwMBBggrBgEFBQcDAjBqBgNVHREEYzBhhwQKAAIPgiN0bHNjYTEucmVjZWl2
+        ZXJiYW5rLmNyb3NzYm9yZGVyLmNvbYIjdGxzY2ExLXJlY2VpdmVyYmFuay1jcm9z
+        c2JvcmRlci1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNHADBEAiAk
+        YhwvWdb0f4gHl2CUW0wWd5cLwkEG9UoSYY69d+GaGgIgNI4MtOEkl47ZME7umxbx
+        RC4yvyFNzSxGNj/Coub+gug=
+        -----END CERTIFICATE-----
+
+"certificateAuthorities":
+  "ca1.senderbank.crossborder.com":
+    "url": "https://10.0.2.15:7000"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIC9jCCApygAwIBAgIUAKckEvuhdnTDV4I40FUQ51FltZYwCgYIKoZIzj0EAwIw
+        gYYxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEjMCEGA1UECgwac2VuZGVyYmFuay5jcm9zc2JvcmRlci5jb20x
+        JzAlBgNVBAMMHmNhMS5zZW5kZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTAeFw0yMzA2
+        MjcxMjUzMjJaFw0zMzA2MjQxMjUzMjJaMIGGMQswCQYDVQQGEwJVUzEXMBUGA1UE
+        CAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gxIzAhBgNVBAoMGnNl
+        bmRlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMScwJQYDVQQDDB5jYTEuc2VuZGVyYmFu
+        ay5jcm9zc2JvcmRlci5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATD1gPc
+        hPzHB28qb9c8ltiaSKfPEqRK5SXNCKwvIMKqQ5tjieairYXNDsdEffIydifLaZPe
+        ikuzNHn61vBV5D6yo4HlMIHiMB0GA1UdDgQWBBRZTy+8adVlLG2oEcG+muKriQlF
+        mzAfBgNVHSMEGDAWgBRZTy+8adVlLG2oEcG+muKriQlFmzAPBgNVHRMBAf8EBTAD
+        AQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUH
+        AwIwYAYDVR0RBFkwV4cECgACD4IeY2ExLnNlbmRlcmJhbmsuY3Jvc3Nib3JkZXIu
+        Y29tgh5jYTEtc2VuZGVyYmFuay1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcE
+        fwAAATAKBggqhkjOPQQDAgNIADBFAiEA9xbkT7j84AaZU1RUywQcnAvmFhDbXFGd
+        h/Fgdnz59aICIEiQ+FhaWQFR2OJtEbgj9SffV9g9GXRcRy1Ew2Fs0ZgJ
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+  "ca1.centralforexbank.crossborder.com":
+    "url": "https://10.0.2.15:7001"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIDGzCCAsCgAwIBAgIUDekZLYh/Kxab7CmRzW17sU/+vbMwCgYIKoZIzj0EAwIw
+        gZIxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDEpMCcGA1UECgwgY2VudHJhbGZvcmV4YmFuay5jcm9zc2JvcmRl
+        ci5jb20xLTArBgNVBAMMJGNhMS5jZW50cmFsZm9yZXhiYW5rLmNyb3NzYm9yZGVy
+        LmNvbTAeFw0yMzA2MjcxMjUyMjZaFw0zMzA2MjQxMjUyMjZaMIGSMQswCQYDVQQG
+        EwJVUzEXMBUGA1UECAwOTm9ydGggQ2Fyb2xpbmExEDAOBgNVBAcMB1JhbGVpZ2gx
+        KTAnBgNVBAoMIGNlbnRyYWxmb3JleGJhbmsuY3Jvc3Nib3JkZXIuY29tMS0wKwYD
+        VQQDDCRjYTEuY2VudHJhbGZvcmV4YmFuay5jcm9zc2JvcmRlci5jb20wWTATBgcq
+        hkjOPQIBBggqhkjOPQMBBwNCAASfF37SnreYuWJ2nz5r+KAaJyqPuUpfG8+6JlXz
+        bKI/HCG1GMwhZHZ/ASo39DWbXDo0wz+5tHKxTUa0bkAjwT3Po4HxMIHuMB0GA1Ud
+        DgQWBBSacxf4fPlz8Em/pfy8oA/9vh9I9zAfBgNVHSMEGDAWgBSacxf4fPlz8Em/
+        pfy8oA/9vh9I9zAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBpjAdBgNV
+        HSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwbAYDVR0RBGUwY4cECgACD4IkY2Ex
+        LmNlbnRyYWxmb3JleGJhbmsuY3Jvc3Nib3JkZXIuY29tgiRjYTEtY2VudHJhbGZv
+        cmV4YmFuay1jcm9zc2JvcmRlci1jb22CCWxvY2FsaG9zdIcEfwAAATAKBggqhkjO
+        PQQDAgNJADBGAiEAi5pk30FWMQL4TDy0RUkRBGbJ60QvX9tRV7Cpgkws+vACIQDu
+        pdBsldFYXVZ7ed57w+/3rASaXZuuESVr6ulKnboHOA==
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+  "ca1.receiverbank.crossborder.com":
+    "url": "https://10.0.2.15:7002"
+    "tlsCACerts":
+      "pem":
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIIDATCCAqigAwIBAgIUbC013pRmU3GBIheA8ff6gslWtRYwCgYIKoZIzj0EAwIw
+        gYoxCzAJBgNVBAYTAlVTMRcwFQYDVQQIDA5Ob3J0aCBDYXJvbGluYTEQMA4GA1UE
+        BwwHUmFsZWlnaDElMCMGA1UECgwccmVjZWl2ZXJiYW5rLmNyb3NzYm9yZGVyLmNv
+        bTEpMCcGA1UEAwwgY2ExLnJlY2VpdmVyYmFuay5jcm9zc2JvcmRlci5jb20wHhcN
+        MjMwNjI3MTI1MzA0WhcNMzMwNjI0MTI1MzA0WjCBijELMAkGA1UEBhMCVVMxFzAV
+        BgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQHDAdSYWxlaWdoMSUwIwYDVQQK
+        DBxyZWNlaXZlcmJhbmsuY3Jvc3Nib3JkZXIuY29tMSkwJwYDVQQDDCBjYTEucmVj
+        ZWl2ZXJiYW5rLmNyb3NzYm9yZGVyLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH
+        A0IABF/wnDXnyjfoEA0pGWk0D1NkqSd6q9LT6tdLi1gOzgYz9AVeOvioUbhLaIUC
+        6cpEU24rBJEf3l2BXbgVSpozmy6jgekwgeYwHQYDVR0OBBYEFCCmFGHepo3YjSGF
+        NKzm1l5s1cJGMB8GA1UdIwQYMBaAFCCmFGHepo3YjSGFNKzm1l5s1cJGMA8GA1Ud
+        EwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMB
+        BggrBgEFBQcDAjBkBgNVHREEXTBbhwQKAAIPgiBjYTEucmVjZWl2ZXJiYW5rLmNy
+        b3NzYm9yZGVyLmNvbYIgY2ExLXJlY2VpdmVyYmFuay1jcm9zc2JvcmRlci1jb22C
+        CWxvY2FsaG9zdIcEfwAAATAKBggqhkjOPQQDAgNHADBEAiA6hz0OCAg+YpvWnCHa
+        zhX0f9VhK5YPkz/iNXtzgZ3dEgIgeh2lBC8Ju64Kpu05ARYBiWCnNId+6IdTuppS
+        5SklFlw=
+        -----END CERTIFICATE-----
+
+    "httpOptions":
+      "verify": "false"
+    "caName": "ca1"
+    "registrar":
+      "enrollId": "admin"
+      "enrollSecret": "adminpw"
+
+"entityMatchers":
+  "orderer":
+  - "mappedHost": "orderer1.crossborder.com"
+    "pattern": "(\\w*)orderer1.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer1.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7013"
+  - "mappedHost": "orderer2.crossborder.com"
+    "pattern": "(\\w*)orderer2.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer2.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7014"
+  - "mappedHost": "orderer3.crossborder.com"
+    "pattern": "(\\w*)orderer3.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "orderer3.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7015"
+  
+  "peer":
+  - "mappedHost": "peer1.senderbank.crossborder.com"
+    "pattern": "(\\w*)peer1.senderbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.senderbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7003"
+  - "mappedHost": "peer2.senderbank.crossborder.com"
+    "pattern": "(\\w*)peer2.senderbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer2.senderbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7004"
+  - "mappedHost": "peer3.senderbank.crossborder.com"
+    "pattern": "(\\w*)peer3.senderbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer3.senderbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7005"
+  - "mappedHost": "peer1.centralforexbank.crossborder.com"
+    "pattern": "(\\w*)peer1.centralforexbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.centralforexbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7006"
+  - "mappedHost": "peer1.receiverbank.crossborder.com"
+    "pattern": "(\\w*)peer1.receiverbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "peer1.receiverbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7007"
+  
+  "certificateAuthorities":
+  - "mappedHost": "ca1.senderbank.crossborder.com"
+    "pattern": "(\\w*)ca1.senderbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.senderbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7000"
+  - "mappedHost": "ca1.centralforexbank.crossborder.com"
+    "pattern": "(\\w*)ca1.centralforexbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.centralforexbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7001"
+  - "mappedHost": "ca1.receiverbank.crossborder.com"
+    "pattern": "(\\w*)ca1.receiverbank.crossborder.com(\\w*)"
+    "sslTargetOverrideUrlSubstitutionExp": "ca1.receiverbank.crossborder.com"
+    "urlSubstitutionExp": "10.0.2.15:7002"

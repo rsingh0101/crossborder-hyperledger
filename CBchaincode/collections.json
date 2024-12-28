@@ -1,0 +1,10 @@
+[
+  {
+    "name": "senderbank",
+    "policy": "OR('senderbank-crossborder-com.member','centralforexbank-crossborder-com.member')",
+    "requiredPeerCount": 1,
+    "maxPeerCount": 1,
+    "blockToLive": 1000000,
+    "memberOnlyRead": true
+  }
+]

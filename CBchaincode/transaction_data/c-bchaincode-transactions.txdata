@@ -1,0 +1,58 @@
+[
+    {
+        "transactionName": "cBchaincodeExists",
+        "transactionLabel": "A test cBchaincodeExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createCBchaincode",
+        "transactionLabel": "A test createCBchaincode transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {
+            "privateValue": "some value"
+        }
+    },
+    {
+        "transactionName": "readCBchaincode",
+        "transactionLabel": "A test readCBchaincode transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateCBchaincode",
+        "transactionLabel": "A test updateCBchaincode transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {
+            "privateValue": "some other value"
+        }
+    },
+    {
+        "transactionName": "deleteCBchaincode",
+        "transactionLabel": "A test deleteCBchaincode transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "verifyCBchaincode",
+        "transactionLabel": "A test verifyCBchaincode transaction",
+        "arguments":[
+            "Org1MSP",
+            "001",
+            {
+                "privateValue": "some other value"
+            }
+        ],
+        "transientData": {}
+    }
+]

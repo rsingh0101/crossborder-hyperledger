@@ -1,0 +1,142 @@
+{
+  "Admin@centralforexbank.crossborder.com": {
+    "key": "Admin@centralforexbank.crossborder.com",
+    "org": "centralforexbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/centralforexbank.crossborder.com/users/Admin@centralforexbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/centralforexbank.crossborder.com/users/Admin@centralforexbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@crossborder.com": {
+    "key": "Admin@crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/users/Admin@crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/users/Admin@crossborder.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@receiverbank.crossborder.com": {
+    "key": "Admin@receiverbank.crossborder.com",
+    "org": "receiverbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/receiverbank.crossborder.com/users/Admin@receiverbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/receiverbank.crossborder.com/users/Admin@receiverbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@senderbank.crossborder.com": {
+    "key": "Admin@senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/users/Admin@senderbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/users/Admin@senderbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "centralforexbank.crossborder.com": {
+    "key": "centralforexbank.crossborder.com",
+    "org": "centralforexbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/centralforexbank.crossborder.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/centralforexbank.crossborder.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "centralforexbank.crossborder.com.tlsca": {
+    "key": "centralforexbank.crossborder.com",
+    "org": "centralforexbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/centralforexbank.crossborder.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/centralforexbank.crossborder.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "crossborder.com": {
+    "key": "crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/ca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "crossborder.com.tlsca": {
+    "key": "crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/tlsca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "orderer1.crossborder.com": {
+    "key": "orderer1.crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer1.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/orderers/orderer1.crossborder.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer2.crossborder.com": {
+    "key": "orderer2.crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer2.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/orderers/orderer2.crossborder.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "orderer3.crossborder.com": {
+    "key": "orderer3.crossborder.com",
+    "org": "crossborder.com",
+    "path": "/home/vars/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer3.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/crossborder.com/orderers/orderer3.crossborder.com/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "peer1.centralforexbank.crossborder.com": {
+    "key": "peer1.centralforexbank.crossborder.com",
+    "org": "centralforexbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/centralforexbank.crossborder.com/peers/peer1.centralforexbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/centralforexbank.crossborder.com/peers/peer1.centralforexbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.receiverbank.crossborder.com": {
+    "key": "peer1.receiverbank.crossborder.com",
+    "org": "receiverbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/receiverbank.crossborder.com/peers/peer1.receiverbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/receiverbank.crossborder.com/peers/peer1.receiverbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer1.senderbank.crossborder.com": {
+    "key": "peer1.senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer1.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer1.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer2.senderbank.crossborder.com": {
+    "key": "peer2.senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer2.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer2.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer3.senderbank.crossborder.com": {
+    "key": "peer3.senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer3.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer3.senderbank.crossborder.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "receiverbank.crossborder.com": {
+    "key": "receiverbank.crossborder.com",
+    "org": "receiverbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/receiverbank.crossborder.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/receiverbank.crossborder.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "receiverbank.crossborder.com.tlsca": {
+    "key": "receiverbank.crossborder.com",
+    "org": "receiverbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/receiverbank.crossborder.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/receiverbank.crossborder.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "senderbank.crossborder.com": {
+    "key": "senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "senderbank.crossborder.com.tlsca": {
+    "key": "senderbank.crossborder.com",
+    "org": "senderbank.crossborder.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/senderbank.crossborder.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/senderbank.crossborder.com/tlsca/priv_sk",
+    "type": "tlsca"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "name": "fabric-network",
+  "description": "Generated network configuration file",
+  "version": "0.1",
+  "client": {
+    "organization": "senderbank.crossborder.com",
+    "credentialStore": {
+      "path": "/tmp/hfc-kvs",
+      "cryptoStore": {
+        "path": "/tmp/hfc-cvs"
+      },
+      "wallet": "wallet-name"
+    }
+  },
+  "organizations": {
+    "centralforexbank.crossborder.com": {
+      "mspid": "centralforexbank-crossborder-com",
+      "peers": [
+        "peer1.centralforexbank.crossborder.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/centralforexbank.crossborder.com/users/Admin@centralforexbank.crossborder.com/msp/signcerts/Admin@centralforexbank.crossborder.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/centralforexbank.crossborder.com/users/Admin@centralforexbank.crossborder.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "crossborder.com": {
+      "mspid": "crossborder-com",
+      "orderers": [
+        "orderer1.crossborder.com",
+        "orderer2.crossborder.com",
+        "orderer3.crossborder.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/ordererOrganizations/crossborder.com/users/Admin@crossborder.com/msp/signcerts/Admin@crossborder.com-cert.pem",
+          "private_key": "/keyfiles/ordererOrganizations/crossborder.com/users/Admin@crossborder.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "receiverbank.crossborder.com": {
+      "mspid": "receiverbank-crossborder-com",
+      "peers": [
+        "peer1.receiverbank.crossborder.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/receiverbank.crossborder.com/users/Admin@receiverbank.crossborder.com/msp/signcerts/Admin@receiverbank.crossborder.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/receiverbank.crossborder.com/users/Admin@receiverbank.crossborder.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "senderbank.crossborder.com": {
+      "mspid": "senderbank-crossborder-com",
+      "peers": [
+        "peer1.senderbank.crossborder.com",
+        "peer2.senderbank.crossborder.com",
+        "peer3.senderbank.crossborder.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/senderbank.crossborder.com/users/Admin@senderbank.crossborder.com/msp/signcerts/Admin@senderbank.crossborder.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/senderbank.crossborder.com/users/Admin@senderbank.crossborder.com/msp/keystore/priv_sk"
+        }
+      }
+    }
+  },
+  "orderers": {
+    "orderer1.crossborder.com": {
+      "url": "10.0.2.15:7013",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "orderer1.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer1.crossborder.com/tls/ca.crt"
+      }
+    },
+    "orderer2.crossborder.com": {
+      "url": "10.0.2.15:7014",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "orderer2.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer2.crossborder.com/tls/ca.crt"
+      }
+    },
+    "orderer3.crossborder.com": {
+      "url": "10.0.2.15:7015",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "orderer3.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/ordererOrganizations/crossborder.com/orderers/orderer3.crossborder.com/tls/ca.crt"
+      }
+    }
+  },
+  "peers": {
+    "peer1.senderbank.crossborder.com": {
+      "url": "10.0.2.15:7003",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer1.senderbank.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer1.senderbank.crossborder.com/tls/ca.crt"
+      }
+    },
+    "peer2.senderbank.crossborder.com": {
+      "url": "10.0.2.15:7004",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer2.senderbank.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer2.senderbank.crossborder.com/tls/ca.crt"
+      }
+    },
+    "peer3.senderbank.crossborder.com": {
+      "url": "10.0.2.15:7005",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer3.senderbank.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/senderbank.crossborder.com/peers/peer3.senderbank.crossborder.com/tls/ca.crt"
+      }
+    },
+    "peer1.centralforexbank.crossborder.com": {
+      "url": "10.0.2.15:7006",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer1.centralforexbank.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/centralforexbank.crossborder.com/peers/peer1.centralforexbank.crossborder.com/tls/ca.crt"
+      }
+    },
+    "peer1.receiverbank.crossborder.com": {
+      "url": "10.0.2.15:7007",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer1.receiverbank.crossborder.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/receiverbank.crossborder.com/peers/peer1.receiverbank.crossborder.com/tls/ca.crt"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca1.senderbank.crossborder.com": {
+      "url": "https://10.0.2.15:7000",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/senderbank.crossborder.com/ca/ca1.senderbank.crossborder.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca1.centralforexbank.crossborder.com": {
+      "url": "https://10.0.2.15:7001",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/centralforexbank.crossborder.com/ca/ca1.centralforexbank.crossborder.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca1.receiverbank.crossborder.com": {
+      "url": "https://10.0.2.15:7002",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/receiverbank.crossborder.com/ca/ca1.receiverbank.crossborder.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "allcas": [
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.senderbank.crossborder.com",
+      "mspid": "senderbank-crossborder-com",
+      "name": "ca1",
+      "oport": "8000",
+      "org": "senderbank.crossborder.com",
+      "port": "7000",
+      "portmap": "-p 7000:7054 -p 8000:9443",
+      "type": "ca",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.centralforexbank.crossborder.com",
+      "mspid": "centralforexbank-crossborder-com",
+      "name": "ca1",
+      "oport": "8001",
+      "org": "centralforexbank.crossborder.com",
+      "port": "7001",
+      "portmap": "-p 7001:7054 -p 8001:9443",
+      "type": "ca",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "command": "fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove",
+      "fullname": "ca1.receiverbank.crossborder.com",
+      "mspid": "receiverbank-crossborder-com",
+      "name": "ca1",
+      "oport": "8002",
+      "org": "receiverbank.crossborder.com",
+      "port": "7002",
+      "portmap": "-p 7002:7054 -p 8002:9443",
+      "type": "ca",
+      "url": "10.0.2.15"
+    }
+  ],
+  "allcouchdbs": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.senderbank.crossborder.com.couchdb",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer1.couchdb",
+      "org": "senderbank.crossborder.com",
+      "port": "7008",
+      "portmap": "-p 7008:5984",
+      "type": "couchdb",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer2.senderbank.crossborder.com.couchdb",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer2.couchdb",
+      "org": "senderbank.crossborder.com",
+      "port": "7009",
+      "portmap": "-p 7009:5984",
+      "type": "couchdb",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer3.senderbank.crossborder.com.couchdb",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer3.couchdb",
+      "org": "senderbank.crossborder.com",
+      "port": "7010",
+      "portmap": "-p 7010:5984",
+      "type": "couchdb",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.centralforexbank.crossborder.com.couchdb",
+      "mspid": "centralforexbank-crossborder-com",
+      "name": "peer1.couchdb",
+      "org": "centralforexbank.crossborder.com",
+      "port": "7011",
+      "portmap": "-p 7011:5984",
+      "type": "couchdb",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.receiverbank.crossborder.com.couchdb",
+      "mspid": "receiverbank-crossborder-com",
+      "name": "peer1.couchdb",
+      "org": "receiverbank.crossborder.com",
+      "port": "7012",
+      "portmap": "-p 7012:5984",
+      "type": "couchdb",
+      "url": "10.0.2.15"
+    }
+  ],
+  "allorderers": [
+    {
+      "fullname": "orderer1.crossborder.com",
+      "mspid": "crossborder-com",
+      "name": "orderer1",
+      "oport": "8013",
+      "org": "crossborder.com",
+      "port": "7013",
+      "portmap": "-p 7013:7050 -p 8013:7060",
+      "type": "orderer",
+      "url": "10.0.2.15"
+    },
+    {
+      "fullname": "orderer2.crossborder.com",
+      "mspid": "crossborder-com",
+      "name": "orderer2",
+      "oport": "8014",
+      "org": "crossborder.com",
+      "port": "7014",
+      "portmap": "-p 7014:7050 -p 8014:7060",
+      "type": "orderer",
+      "url": "10.0.2.15"
+    },
+    {
+      "fullname": "orderer3.crossborder.com",
+      "mspid": "crossborder-com",
+      "name": "orderer3",
+      "oport": "8015",
+      "org": "crossborder.com",
+      "port": "7015",
+      "portmap": "-p 7015:7050 -p 8015:7060",
+      "type": "orderer",
+      "url": "10.0.2.15"
+    }
+  ],
+  "allorgs": [
+    "centralforexbank.crossborder.com",
+    "crossborder.com",
+    "receiverbank.crossborder.com",
+    "senderbank.crossborder.com"
+  ],
+  "allpeers": [
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.senderbank.crossborder.com",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer1",
+      "oport": "8003",
+      "org": "senderbank.crossborder.com",
+      "port": "7003",
+      "portmap": "-p 7003:7051 -p 8003:7061",
+      "type": "peer",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer2.senderbank.crossborder.com",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer2",
+      "oport": "8004",
+      "org": "senderbank.crossborder.com",
+      "port": "7004",
+      "portmap": "-p 7004:7051 -p 8004:7061",
+      "type": "peer",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer3.senderbank.crossborder.com",
+      "mspid": "senderbank-crossborder-com",
+      "name": "peer3",
+      "oport": "8005",
+      "org": "senderbank.crossborder.com",
+      "port": "7005",
+      "portmap": "-p 7005:7051 -p 8005:7061",
+      "type": "peer",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.centralforexbank.crossborder.com",
+      "mspid": "centralforexbank-crossborder-com",
+      "name": "peer1",
+      "oport": "8006",
+      "org": "centralforexbank.crossborder.com",
+      "port": "7006",
+      "portmap": "-p 7006:7051 -p 8006:7061",
+      "type": "peer",
+      "url": "10.0.2.15"
+    },
+    {
+      "adminPassword": "adminpw",
+      "fullname": "peer1.receiverbank.crossborder.com",
+      "mspid": "receiverbank-crossborder-com",
+      "name": "peer1",
+      "oport": "8007",
+      "org": "receiverbank.crossborder.com",
+      "port": "7007",
+      "portmap": "-p 7007:7051 -p 8007:7061",
+      "type": "peer",
+      "url": "10.0.2.15"
+    }
+  ],
+  "caorgs": [
+    "centralforexbank.crossborder.com",
+    "receiverbank.crossborder.com",
+    "senderbank.crossborder.com"
+  ],
+  "console_port": "7019",
+  "explorer_port": "7017",
+  "ordererorgs": [
+    "crossborder.com"
+  ],
+  "orgattrs": {
+    "centralforexbank.crossborder.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "centralforexbank-crossborder-com"
+    },
+    "crossborder.com": {
+      "certpath": "ordererOrganizations",
+      "mspid": "crossborder-com"
+    },
+    "receiverbank.crossborder.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "receiverbank-crossborder-com"
+    },
+    "senderbank.crossborder.com": {
+      "certpath": "peerOrganizations",
+      "mspid": "senderbank-crossborder-com"
+    }
+  },
+  "peerorgs": [
+    "centralforexbank.crossborder.com",
+    "receiverbank.crossborder.com",
+    "senderbank.crossborder.com"
+  ],
+  "portainer_port": "7018"
+}
