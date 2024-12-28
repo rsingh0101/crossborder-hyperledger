@@ -1,5 +1,5 @@
 # Cross Border Transaction blockchain
-<img src="https://github.com/rsingh0101/crossborder-hyperledger/blob/main/cross-borders.svg" width="100">
+<img src="https://github.com/rsingh0101/crossborder-hyperledger/blob/main/cross-borders.svg" width="1000">
 
 ----
 
